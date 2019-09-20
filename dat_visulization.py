@@ -114,3 +114,9 @@ plt.title("Histogram of Petal Lengths, by Species")
 plt.legend()
 
 #we can do same for kde also
+
+
+#design your graph
+sns.set_style('dark') #the display plane will be colored as dark, darkgrid, whitegrid, white, ticks
+plt.figure()
+sns.lineplot()
