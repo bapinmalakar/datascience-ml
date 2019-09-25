@@ -49,7 +49,7 @@ print('delete columne contain emty value: then MAE=>  ', scoreOfAModel(random_fo
 # simple imputation, replce empty ceil with mean value
 my_imputation = SimpleImputer()
 impute_train_x = pd.DataFrame(my_imputation.fit_transform(train_x))
-impute_val_x = pd.DataFrame(my_imputation.fit_transform(val_x))
+impute_val_x = pd.DataFrame(my_imputation.transform(val_x))
 
 #imputation solved it, put back
 impute_train_x.columns = train_x.columns
