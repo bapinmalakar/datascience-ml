@@ -23,7 +23,9 @@ myPipeline = Pipeline(steps=[
 ])
 
 #cv is number of flods
-scores =1 * cross_val_score(myPipeline, X, Y,cv=3)
+scores =-1 * cross_val_score(myPipeline, X, Y,cv=3)
 
 print('Score is: ', scores)
-
+ 
+#mean score
+print(scores.mean())
