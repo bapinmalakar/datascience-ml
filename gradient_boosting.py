@@ -2,6 +2,7 @@
 
 #Innitial Model(naive model)=>Calulate prediction=>Loose function=>add new model to ensemble<=Train new model based on loose function=> repeat cycle
 #XGBoost stands for extreme gradient boosting
+#XGBoost is best for data in the from of table
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -55,6 +56,7 @@ print('With learning rate model MAE Score is: ', mean_absolute_error(y_valid, pr
 
 #for lager data set we can use paraller tasking to create models for fasteest processing, n_jobs
 #n_jobs=4, no_of_cores in machine
+#nothing to do with model imporvment, only make fast processing
 myModel= XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=4)
 myModel.fit(X_train, y_train, early_stopping_rounds=5, eval_set=[(X_valid, y_valid)], verbose=False)
 predictionIs = myModel.predict(X_valid)
