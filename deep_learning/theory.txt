@@ -1,0 +1,13 @@
+1. Each image represent by matrinx of pixel
+2. Then we apply convolution to find patter
+3. When we applied convolution to a matrix create a new 2D Transer
+4. and sum of 2D is 3D Transer
+
+1. 1D means Moving to x or horizonal
+2. 2D means Moving to y or vertical
+3. Connecting point of different 2D Transer, Channel Dimension
+
+Each set of convolution applied on same time called layer
+
+Steps
+1. Crete row pixe matrix-> 2. apply convolution on matrix for 3D -> 3. aplly layer on 3D=> 4. aplly More filter=> continue 3,4 until find best
