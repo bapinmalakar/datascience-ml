@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+deep_learning/learntools/
+deep_learning/train_image/
+input/
