@@ -105,4 +105,6 @@ venv.bak/
 
 deep_learning/learntools/
 deep_learning/train_image/
+deep_learning/test_data/
+deep_learning/pretrained_mode_data/
 input/
