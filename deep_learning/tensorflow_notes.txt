@@ -1,0 +1,41 @@
+Every model have 3 layer: Input Layer, Hidden Layer, Output/Predict Layer
+
+Input layer is collection of nodes, each column in the table knows as node
+
+Hidden layer, we can have n number of interconnect node
+
+Output/Predict Layer, suppose we want to predict Man or Woman, then number of node is 2(Man and Woman)
+
+Each node of each layer connect with all node of another layer
+
+Each connection have an weight, to calculate value
+
+W1(I1-O2) + W2(I2-O2)+ .... + Wn(In-On) = output will predict result, for a single rown in table
+
+Now how the model get good weight for that we can use
+Loss Function: 
+define how good model prediction are 
+Loss=f(actual_value, predited_value)
+if, prediction goode then Loss() function return low value, else return high value
+The model accuracy depend on weight, so if we change weight then loss function value will also change
+
+Gradien Descent
+For model optimixation, Gradien Descent and Classic Gradient Descent
+Use classic Gradient Descent to set the weight for minimize the Loss() function value
+
+Back propagation
+Get the direction in which way chnage the weight, minimize the value of Loss function
+Process to in which way find the weight to minimize Loss function value in each step of Gradient Descent
+
+In table data
+Batch size: number of row
+
+Incase of image
+Batch size: number of images
+
+The size of weight change determine by something called Learning Rate
+Low Learning rate, will model take long time to train before get accurate output
+High Learning rate, will model may take huge step over to fit and always jumping over the best way and never get accurate result
+
+In mode.fitGenerator we can use 
+optimizer='aadm', special variation for Gradient Descent, automatially fit to best learning rate
