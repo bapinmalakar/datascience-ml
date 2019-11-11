@@ -108,7 +108,7 @@ deep_learning/train_image/
 deep_learning/test_data/
 deep_learning/pretrained_mode_data/
 input/
-like_share_days_wise.csv/
-output_data.csv/
-query_result.csv/
-week_day.csv/
+like_share_days_wise.csv
+output_data.csv
+query_result.csv
+week_day.csv
