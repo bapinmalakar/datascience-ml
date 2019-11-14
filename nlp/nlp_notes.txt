@@ -1,0 +1,27 @@
+NLP Consist of 5 component
+1. Morphological Analysis Lexical Analysis: 
+    Divide text into paragraph, text and words. Its invludes words and expression. It analyze the word within its component and extract
+    nonwords like punchuation from words.
+2. Syntatic Analysis
+3. Semantic Analysie:
+    Its a structure created by syntatic analyzer and assign meaning. Transfer linear words into structure and definne word
+    relationship with each other.
+4. Discourse Analysis
+5. Programmic Analysis
+
+pip3 install nltk
+
+Download nltk dataset
+1. open terminal
+2. python3
+3. import nltk
+4. nltk.download()
+5. Prompt appear
+6. select download path
+6. clik download button
+7. write a small python script
+from nltk.corpus import brown
+brown.words()
+
+output will be
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
