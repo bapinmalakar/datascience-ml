@@ -60,9 +60,11 @@
 #*, match 0 or more occurabce
 #?, Match 0 or 1 repetitions
 
+#chunk mak over words after assign pos_tag
+
 from nltk import pos_tag #part of spech tagging
-from nltk import RegexpParser
-from nltk.tokenize import RegexpTokenizer
+from nltk import RegexpParser #RegexPattern Parser
+from nltk.tokenize import RegexpTokenizer #RegexPattern Tokenize
 
 smaple_text = "learning NLP now and continue learing untill NLP is not finish!!"
 regex_tokenizer = RegexpTokenizer(r'\w+')
@@ -74,7 +76,7 @@ assign_tags = pos_tag(wordsAre)
 
 print('Words with taggs\n', assign_tags)
 
-pattern = """mychunk:{<NNP.?>*<VBG.?>*<VBZ>?}"""
+pattern = """mychunk:{<NNP.?>*<VBG.?>*<VBZ>?}""" # we can also call them as grammer
 
 chunker = RegexpParser(pattern)
 
@@ -83,3 +85,9 @@ print('After regex: ', chunker)
 output = chunker.parse(assign_tags)
 
 print('After chunking ', output)
+
+output.draw() #draw your chunk find pattern graphically
+
+#primary usecase is entity detection. Entity is the part of the sentence by which machine get the value for any intention
+#otherword, chunking used for select suset of a token 
+#chunking are used to categorize different token into same group
