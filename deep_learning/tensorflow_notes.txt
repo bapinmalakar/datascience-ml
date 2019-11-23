@@ -24,7 +24,7 @@ For model optimixation, Gradien Descent and Classic Gradient Descent
 Use classic Gradient Descent to set the weight for minimize the Loss() function value
 
 Back propagation
-Get the direction in which way chnage the weight, minimize the value of Loss function
+Get the direction in which way change the weight, minimize the value of Loss function
 Process to in which way find the weight to minimize Loss function value in each step of Gradient Descent
 
 In table data
@@ -34,7 +34,7 @@ Incase of image
 Batch size: number of images
 
 The size of weight change determine by something called Learning Rate
-Low Learning rate, will model take long time to train before get accurate output
+Low Learning rate(alpha), will model take long time to train before get accurate output
 High Learning rate, will model may take huge step over to fit and always jumping over the best way and never get accurate result
 
 In mode.fitGenerator we can use 

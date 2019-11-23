@@ -1,0 +1,45 @@
+ML algorithm types: 
+
+1. Supervised learning: Going to teach computer how to do task
+2. Unsupervised learning: Computer going to learn by self
+
+Other type:
+1. Reinforcement Learning
+2. Recommender System
+
+#Superviser Learning
+Regression Problem: Try to find output of contiguous values  ex: price of hose
+Classification Problem: Tyr to find output of Discrete Values(0 or 1) ex: Movie Like or Not, child class indentification
+
+#Unsupervised Learning
+1. Data are not labeld
+2. We dont explained what each data point
+3. We give data set, and ml try to find the structure of the data
+4. In unsupervised we give data in different cluster, and ml try to predict the data into the different cluster
+5. Known as Clustering algorithm
+6. Google News use Cluster algorithom
+7. Cluster Algorithm try to group the data, each group known as cluster
+
+#Regression Problem with LinerRegression
+1. have training set
+2. training set apply on learning algoritnm
+3. Learning algorithm use h:function(hypothesis function) to predict traget(Y) and iput is features(X)
+4. h(x) = Q0 + Q1(X),   Q0 is theta 0 and Q1 is theta 1, h(x) is linear function
+5. Cost function: figure out best straight line into our data
+6. Q0, Q1 are parameter
+7. theta value may be (Q0, Q1) = (1.5, 0), (Q0, Q1) = (0, 0.5), (Q0, Q1) = (1, 0.5) 
+8. now objective is findout the best parameter value
+9. Choose the value of Q1,Q2 such taht h(x) give value near to Y of training data(X,Y)
+10. Minimize Q0, Q1 such that h(x)-Y Square difference is minimum
+11. Sum of (hi(x) - Y(i)) Square difference, i from 1 to n, where n is number of row(traing data size), let whole thing is T
+12. So h(xi) = Q0 + Q1(xi),
+13. Cost function is J(Q0, Q1) = (1/2N)(T)
+14. This cost function is also known as Square Error Function
+
+#Gradien Descent Algoritm
+1. Use to find the value of Q1, Q2
+2. And it will automatically find the best value
+#Process
+1. start with any value of Q0,Q1
+2. Keep chnging value and evalute cost function J(Q0,Q1)
+3. Stop when minimize the value of cost function J(Q0,Q1)
