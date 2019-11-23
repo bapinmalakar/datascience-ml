@@ -20,7 +20,7 @@ Classification Problem: Tyr to find output of Discrete Values(0 or 1) ex: Movie 
 6. Google News use Cluster algorithom
 7. Cluster Algorithm try to group the data, each group known as cluster
 
-#Regression Problem with LinerRegression
+#Regression Problem with LinerRegression with Single X 
 1. have training set
 2. training set apply on learning algoritnm
 3. Learning algorithm use h:function(hypothesis function) to predict traget(Y) and iput is features(X)
@@ -43,3 +43,8 @@ Classification Problem: Tyr to find output of Discrete Values(0 or 1) ex: Movie 
 1. start with any value of Q0,Q1
 2. Keep chnging value and evalute cost function J(Q0,Q1)
 3. Stop when minimize the value of cost function J(Q0,Q1)
+
+# Regression with multiple X
+1. if i want to find y(roam price) using N-number of x (features i.e size, location, roam number, floor number etc), then I need to use Metrics and Vector
+2. metric is a N dimensional(N= number of features) array, have all the fetures data
+3. vetor is 1D array, have all target value respect to feaures
