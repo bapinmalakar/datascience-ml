@@ -48,3 +48,13 @@ Classification Problem: Tyr to find output of Discrete Values(0 or 1) ex: Movie 
 1. if i want to find y(roam price) using N-number of x (features i.e size, location, roam number, floor number etc), then I need to use Metrics and Vector
 2. metric is a N dimensional(N= number of features) array, have all the fetures data
 3. vetor is 1D array, have all target value respect to feaures
+
+#Vector is a metrix with one column only (N X 1)
+#Here this vector is N -Dimesional
+
+#Predictin Formula
+prediction = DataMetrics(metrics by X values) * Parameter Vector
+
+#if X is more than 1 then
+1. h(x) = Q0 + Q1(X1) + Q2(X2) + Q3(X3) + .... + QN(XN)
+2. Each row is one columne
