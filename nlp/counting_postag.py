@@ -44,6 +44,7 @@ biGramAre = nltk.bigrams(tokensOfPara)
 print(list(biGramAre))
 
 triGrams = nltk.trigrams(tokensOfPara)
+print('\n\n\n', list(triGrams))
 
 
 
