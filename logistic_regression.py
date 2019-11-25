@@ -2,6 +2,7 @@
 # Is statistic, classification model for binary classification
 # Binary because it can only two distinct class
 # Its Supervised learning model
+# also linear model
 
 # Odds
 # Number event occure on something / number of event not occure on same place
