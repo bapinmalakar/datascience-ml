@@ -30,11 +30,11 @@
 # transform to vector
 # it will put 0 if word not present in vocabulary, or put count of the word
 
-from sklearn.feature_extraction.text import CountVectorizer
-sentence_1= "guru99 is the best sitefor online tutorials. I love to visit guru99."
-vectorizer = CountVectorizer()
-vocabulary = vectorizer.fit([sentence_1])
-X= vectorizer.transform([sentence_1])
+# from sklearn.feature_extraction.text import CountVectorizer
+# sentence_1= "guru99 is the best sitefor online tutorials. I love to visit guru99."
+# vectorizer = CountVectorizer()
+# vocabulary = vectorizer.fit([sentence_1])
+# X= vectorizer.transform([sentence_1])
 
 # print('For sentence_1\n')
 # print(X.toarray())
@@ -93,17 +93,91 @@ X= vectorizer.transform([sentence_1])
 # pip3 install gensim
 
 import nltk as nltk
-import gensim as gensim # model for topic modeling and document indexing
-from nltk.corpus import abc # import abc file for test
+from gensim.models import Word2Vec # model for topic modeling and document indexing
+# from nltk.corpus import abc # import abc file for test
 
-print('setup done: ')
+# print('setup done: ', abc.sents())
 
-model = gensim.models.Word2Vec(abc.sents()) # craete  Word2Vec by the abc file
-# print(model)
-X = list(model.wv.vocab) #Vcabulary is stored in the form of the variable
-# print(X) 
+# model = Word2Vec(abc.sents()) # craete  Word2Vec by the abc file
+# # print(model)
+# X = list(model.wv.vocab) #Vcabulary is stored in the form of the variable
+# # print(X) 
 
-data = model.most_similar('science') # find similar words of science by model prediction
+# data = model.most_similar('science') # find similar words of science by model prediction
 
-print(data)
+# print(data)
 
+#Activation function
+# activation function define the output od neural network after a set of steps
+# X1, X2, X3, ... Xn is the node of nural network and W1,W2,W3,...Wn is the weight
+# Output= summation of all weigh and node value, act as activation function
+# If no activativation then output will be liner. For complext or non-linear output we need activation function
+# # Softmax is output layer function which activate each node.
+# 
+# Topic modeling discover hidden structure in the text body. 
+
+
+# now build a chatbot using Word2Vec
+# prepare a json file which have 3 component
+# tag: define the topic or subject of the discussion
+# patter: define the question may ask by user to bot
+# responses: define the answer of cosrresponding question/pattern
+
+#setp1 prepare data, input/data.json prepared
+
+#setp2 load data
+import string
+import json
+import pandas as pd
+from nltk.corpus import stopwords
+from textblob import Word
+
+json_file = './input/data.json'
+with open(json_file, 'r') as f: # open file in read mode, it will return content in encodded mode
+    print(f)
+    data = json.load(f) #load josn data
+    print(data)
+
+#step3 convert data in dataframe
+dataFrame = pd.DataFrame(data)
+print(dataFrame.head())
+dataFrame['patterns'] = dataFrame['patterns'].apply(', '.join) # convert array to string
+print(dataFrame.head())
+
+#step4 now clear data, remove stop word, filtered punctuation, removed numbers and dots. for that we going to use nltk
+
+stop = stopwords.words('english') #only english words
+print('stopss: ', stop)
+
+#convert to lower case
+dataFrame['patterns'] = dataFrame['patterns'].apply(lambda x: ' '.join(x.lower() for x in x.split())) #x.split() divide the each row into words
+print('\n lowercase\n', dataFrame.head())
+
+# filterd punctuation of from each patterns row
+dataFrame['patterns'] = dataFrame['patterns'].apply(lambda x: ' '.join(x for x in x.split() if x not in string.punctuation))
+print('\n punctuation\n', dataFrame.head())
+
+dataFrame['patterns'] = dataFrame['patterns'].str.replace('[^\w\s]', '') #remove dots
+print('\n\n', dataFrame['patterns'])
+
+#remove digits
+dataFrame['patterns'] = dataFrame['patterns'].apply(lambda x: ' '.join(x for x in x.split() if not x.isdigit())) #remove digit those are act as word
+print('after remove pattern:: \n', dataFrame['patterns'])
+
+#remove stop words
+dataFrame['patterns'] = dataFrame['patterns'].apply(lambda x: ' '.join(x for x in x.split() if x not in stop))
+print('\nremove stopword \n', dataFrame['patterns'])
+
+#remove different form of same word using lemmatization
+dataFrame['patterns'] = dataFrame['patterns'].apply(lambda x: ' '.join([Word(word).lemmatize() for word in x.split()]))
+print('\n\nRemoved same word\n', dataFrame['patterns'])
+
+#make input vectors
+Big_List = []
+for row in dataFrame['patterns']:
+    li = list(row.split()) # break sentence into words
+    Big_List.append(li) # append list of words into big list
+
+print(Big_List) # big list contain list of each sentence words
+
+model = Word2Vec(Big_List, min_count=1, size=300, workers=4)
