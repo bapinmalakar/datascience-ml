@@ -58,3 +58,20 @@ prediction = DataMetrics(metrics by X values) * Parameter Vector
 #if X is more than 1 then
 1. h(x) = Q0 + Q1(X1) + Q2(X2) + Q3(X3) + .... + QN(XN)
 2. Each row is one columne
+
+
+#Normal equation
+Gradient Descent algorithm used to find Q, but this process is iterative proces. Fast even N is large, Need learning rate
+We have another algorithm for find Q is Normal Equation by analytically, Slow if N is large, not required learning rate
+
+#Classification Using Logistic Regression
+Logistic Regression is binary Classification model, because it can classify only two class. In Logistic Regression it ensure that 
+the output of (hQ) should be 0<=h(Q1)<=1
+1. h(X) = g(Q^T X)
+2. g(z) = 1/(1+e^-z), z is row number and this function known as sigmoid functio/logistic function
+3. z is -inifinity, g(z) approach to 0, z is +inifinity then g(z) approach to 1
+4. Decision Boundary
+5. the line beteween Y=0 class and Y=1 class, means the line which divided class 0 and 1, known as decision boundary
+6. Incase of linear data this line is straight line
+7. incase of non-liner boundary decision line can any form, curve, circle etc.
+7. For no-linear data we can use polynomial regression like used in linear regression
