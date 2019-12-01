@@ -75,3 +75,11 @@ the output of (hQ) should be 0<=h(Q1)<=1
 6. Incase of linear data this line is straight line
 7. incase of non-liner boundary decision line can any form, curve, circle etc.
 7. For no-linear data we can use polynomial regression like used in linear regression
+
+#Validation or Evalute model
+1. Used diffirent model on same data and check Error and select model which give less error
+2. Divide same data for train, cross validation and test, 
+3. then select model which give less cross validation error and apply test on this model
+4. Then check Cross Validation error and Test error(May be Square error, MAE etc.)
+5. If test error is high and Cross validation error is high, then underfit/bias
+6. If test error is low and Cross validation error is higher then test error, then overfit/variance
