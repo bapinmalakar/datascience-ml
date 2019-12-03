@@ -83,3 +83,34 @@ the output of (hQ) should be 0<=h(Q1)<=1
 4. Then check Cross Validation error and Test error(May be Square error, MAE etc.)
 5. If test error is high and Cross validation error is high, then underfit/bias
 6. If test error is low and Cross validation error is higher then test error, then overfit/variance
+
+#Unsupervised Learning(Cluster)
+1. Here we dont have label in our data
+2. We give data to the model and tell to find structure of the data
+3. And then group the data based on structure or features
+4. Each group known as cluster
+5. KMeans algorithm is most popular widely used algorithm for clusterig
+
+
+#Steps of KMeans
+It have 2 loop
+One for assign data point to closes cluster
+And another loop to find centroind point of clusters
+1. Define K, number of cluster we want
+2. KMeans randomly initialize the centroid for eack cluster K
+3. Iterate each data and assign each data to nearest cluster by distance beteween Data and cluster
+    a. c = Xi - d(Ck), Xi  data point of row i and Ck is Kth cluster
+    b. do this for all cluster(k) with same data
+    c. Select cluster which one produce minimum difference
+4. Repeat process 3 for all data(m)
+5. Calculate centroid point for each cluster
+    a. taking the avarage of all data points belong to this cluster Ck = ((X1+X2+X3+X4)/4)
+    b. reinit the cluster with new mean value(new centroid)
+6. Repeat step 2,3,4,5 until no change of centroid  point of each cluster
+
+KMeans cost function also known as Distortion Algorithm
+
+#Incase of random initialize of K
+1. k<m, m number of training data
+2. Randomly pick k training example
+
