@@ -114,3 +114,8 @@ KMeans cost function also known as Distortion Algorithm
 1. k<m, m number of training data
 2. Randomly pick k training example
 
+
+#Recommended System
+Find the parameter value of a user, where user not given so that we can Recommended
+1. Content based algorithm(Not the content, which type of content and how much )
+2. Collaborate Algorithm(Don't know the content type, derived content type weight(how much))
