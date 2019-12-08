@@ -23,6 +23,8 @@
 # 3. Find most common classification of this entries
 # 4. Then give this classification to the new sample
 
+
+# Here we have data which have user age, gender, salary and we need to find this user going to purchase product or not
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
