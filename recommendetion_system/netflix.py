@@ -84,3 +84,34 @@ plot.axis('off')
 
 for i in range(1,6):
     ax.text(p.iloc[i-1][0]/4, i-1, 'Rating {}: {:.0f}%'.format(i, p.iloc[i-1][0]*100 / p.sum()[0]), color = 'white', weight = 'bold')
+
+df_nan = pd.DataFrame(pd.isnull(dataFrame.Rating))
+#preapre rating data such that rating filed have value in True/False if given then False else True
+#Because our condition is isnull
+#Have two field index and Rating
+print(df_nan)
+
+#Now filter those field have True value in rating field means, no Rating
+df_nan = df_nan[df_nan['Rating']==True]
+print(df_nan)
+
+df_nan = df_nan.reset_index()
+#reset index of df_nan
+
+#now crate movie id nump array equal to number of  Filed of rating
+movie_np = []
+movie_id = 1
+
+for i,j in zip(df_nan['index'][1:],df_nan['index'][:-1]):
+    # numpy approach
+    temp = np.full((1,i-j-1), movie_id)
+    movie_np = np.append(movie_np, temp)
+    movie_id += 1
+
+# Account for last record and corresponding length
+# numpy approach
+last_record = np.full((1,len(df) - df_nan.iloc[-1, 0] - 1),movie_id)
+movie_np = np.append(movie_np, last_record)
+
+print('Movie numpy: {}'.format(movie_np))
+print('Length: {}'.format(len(movie_np)))

@@ -64,3 +64,8 @@ print('only poem data isin \n\n', dataFrameIs.loc[dataFrameIs.format_name.isin([
 #assigning value or add new field with value
 dataFrameIs['add_vale'] = 'demo value'
 print(dataFrameIs.head())
+
+
+
+
+
