@@ -1,0 +1,46 @@
+#Technique to filter tha data for a user based on the reaction of similler type of users.
+#It will search in large group and find small set of users those are have same taste
+# For that we want set of users those are already give reaction on some items
+#Reaction can be explicit or implicit
+#explicit: rating, like, dislike, share
+#implicit: read, view, time span, adding to wish list
+#sparse: matrix with mostly empty cells
+#dense: matrix with mostly filled cells
+
+#Going to use MovieLens data
+#u.item fil conytain movies
+#u.data file contatain rating give by user for a movie
+# this rating use to predict rating, where user not given
+#rating field contain user_id, item_id, rating, timestamp
+
+#steps
+# Find similler users or items
+# predict the rating of the the items, not given by user yet
+
+#Calculate predicted rating error using Root Mean Square Error(RMSE)
+# Error is difference between predicted rating and actual rating
+# Then fins square of the error
+# Then find the avarage
+# Then take square root of the the mean
+
+#differe type of algorithm thats are family of Collaborate Filtering
+
+#1. Memory Based: Here statistic technique apply to predict rating
+#Find the rating R for user U, that may be given for item I
+#   a. Finding users similler to U those are  rated item I
+#   b. Calculate Rating R based on user rating found in step a
+
+#We try to calculate distance between users points
+# spatial.distance.euclidean
+# spatial.distance.cosine: it will give angel difference, 
+# if angel difference between two users is very low then they are most similler, 0 means totally similler
+# Now find avarage rating of each user and minuse avarage rating from each rating of that user
+# this approach help us to find similar users
+
+#Above example we try to find similler user based on their rating on items, called user-based collaborative filtering
+#If we use approach where we try to find similler items based on the user rating, then called item-based collaborative filtering 
+
+#If number of user more than item then item-based is faster and more stable
+#User-based is good when we want recommend based on user reactions
+
+
