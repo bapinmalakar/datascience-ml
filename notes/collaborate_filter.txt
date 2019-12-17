@@ -23,7 +23,7 @@
 # Then find the avarage
 # Then take square root of the the mean
 
-#differe type of algorithm thats are family of Collaborate Filtering
+#difference type of algorithm thats are family of Collaborate Filtering
 
 #1. Memory Based: Here statistic technique apply to predict rating
 #Find the rating R for user U, that may be given for item I
@@ -44,3 +44,38 @@
 #User-based is good when we want recommend based on user reactions
 
 
+#2. Model Based
+Our user and item can be represent as matrix
+
+      I1    I2    I3    I4    I5
+
+u1    3     4           5     
+
+u2          5           4     3
+
+u3    5     4           5         
+
+u4    3     4                 3
+
+It involve to reduce or compress the large but sparse user item matrix
+
+#Dimensionality Reduction
+#Have two dimension
+1. Number of users
+2. Number of items
+
+If matrix mostly empty then we can reduce it which will increase the algorithm performance, bot time and space
+For that we can use Matrix Factorization
+# Matrix Factorization is process of breaking down large matrix into product of smaller matrix, similler to the number factorization
+ Like 12 can be written as 6*2, 3*4, 
+
+ So, Matrix A with dimension mxn can be reduce into product of two small matrix X, Y such as mxp and pxn respectively
+
+ The reduce matrix actually represent the user and items individually
+ The m row in first matrix represent the m users and p columns represent its features
+
+ Popular algorithm fro Matrix factorization
+ **singular value decomposition**
+
+ #Matrix factorization is very helpful to find content weight
+ like I1 item how much horror and how much romantic 
