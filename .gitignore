@@ -117,3 +117,5 @@ deep_learning/.ipynb_checkpoints/
 deep_learning/Untitled*.ipynb
 corpora/
 models/
+
+*.ipynb
